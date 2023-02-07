@@ -1,0 +1,38 @@
+--> HTML CSS
+
+1) roadmap.sh 
+2) htlm/css: DRY principle : dont repeat uself
+
+!!! css  Box model:: element->h, w, padding(inside), border, margin(outside),
+
+
+poitions: absolute, relative , static???? (fixed ok)
+
+element visibility controller?
+
+
+
+code - practice::: 
+what extensions in vscode?? :: 
+    - live server 
+    - open . (terminal) 
+    - lorem  (+tab) = random text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->big tech + small teams

@@ -1,0 +1,12 @@
+master DB and slace db
+why spring ang django???? 
+API = communication  (between chief and client) (is there have to be many WAITERS??) 
+
+--> Rest = ..      api = .. 
+
+API'rule = resources - nouns || http_methods - verbs 
+ 
+
+--> google, spotify SWE internships 
+
+
