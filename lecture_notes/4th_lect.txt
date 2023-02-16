@@ -1,0 +1,28 @@
+angular 
+
+diff ts/js
+
+- dynamic data types
+
+so ans to Q (why TS needed?) 
+
+
+single / multi 
+component 
+
+
+
+ng  [check]
+
+
+ng new demo -> yes -> css 
+
+dependencies
+
+app-root? 
+
+two way data binding
+
+
+предлагаю так записывать 3/4 
+часовые лекции детально чем 2 ч-е 

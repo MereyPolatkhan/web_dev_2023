@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    background-color: rgb(200, 200, 200);
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+
+#new-task-form{ 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.task {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+
+}
