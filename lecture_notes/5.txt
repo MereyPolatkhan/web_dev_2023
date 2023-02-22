@@ -1,0 +1,20 @@
+lecture 5 angular component
+
+- what is generate service
+- service vs component
+- Ngif vs ndIf? 
+
+name component:
+    2 more => HelloWorld | hello-world 
+    1 word in Hello 
+
+what is OnInit? - lifecycle of component (OnInit, OnChange, OnDestroy etc) 
+
+what is we have another fiedls like title? - all fields 
+
+what is ngModel?
+what is ngclass? 
+
+[(ngModel)] ?? [()] - two way data binding, input and output  
+
+[task]="task" 
