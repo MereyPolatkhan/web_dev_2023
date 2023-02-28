@@ -1,1 +1,40 @@
-<p>{{product.image}}</p>
+
+<h4>
+    <a [routerLink]="['/products', productFromCategory.id]">
+       {{productFromCategory.name}}
+    </a>
+</h4>
+
+<img [src]="productFromCategory.image" alt="" width="100px"/>
+<p *ngIf="productFromCategory.description">Description: {{ productFromCategory.description }}</p>
+
+<button type="button" (click)="share()">Share</button>
+
+
+<!--<app-product-alerts [product]="productFromCategory" ]>-->
+<!--</app-product-alerts>-->
+
+
+
+
+<!--code below from product list component-->
+
+<!--<div *ngFor="let product of products">-->
+<!--  <h3>-->
+<!--    <a-->
+<!--      [title]="product.name + ' details'"-->
+<!--      [routerLink]="['/products', product.id]"-->
+<!--    >-->
+<!--      {{ product.name }}-->
+<!--    </a>-->
+<!--  </h3>-->
+
+<!--  <img [src]="product.image" alt="" width="100px" />-->
+
+<!--  <p *ngIf="product.description">Description: {{ product.description }}</p>-->
+
+<!--  <button type="button" (click)="share(product)">Share</button>-->
+
+<!--  <app-product-alerts [product]="product" (notify)="onNotify()">-->
+<!--  </app-product-alerts>-->
+<!--</div>-->

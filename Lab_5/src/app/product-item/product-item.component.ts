@@ -7,7 +7,7 @@ import { Product } from "../products";
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent {
-  @Input() product : {
+  @Input() productFromCategory : {
     description: string | undefined;
     id: number | undefined;
     image: string | undefined;
@@ -19,7 +19,7 @@ export class ProductItemComponent {
   @Output() newItemEvent = new EventEmitter<string>();
 
   constructor() {
-    this.product = new class implements Product {
+    this.productFromCategory = new class implements Product {
       // @ts-ignore
       description: string | undefined;
       // @ts-ignore
@@ -37,12 +37,12 @@ export class ProductItemComponent {
     }
   }
 
-  // share(product: { link: string }) {
-  //   window.open('https://telegram.me/share/url?url=' + product.link);
-  // }
-  //
-  // onNotify() {
-  //   window.alert('You will be notified when the product goes on sale');
-  // }
+  share() {
+    window.open('https://telegram.me/share/url?url=' + this.productFromCategory.link);
+  }
+
+  onNotify() {
+    window.alert('You will be notified when the product goes on sale');
+  }
 
 }

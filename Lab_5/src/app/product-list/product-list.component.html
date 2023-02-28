@@ -2,8 +2,7 @@
     <h1> {{ category.title }} </h1>
     <div *ngFor="let prod of category.products">
         <app-product-item
-                [product]="prod"
-
+                [productFromCategory]="prod"
         ></app-product-item>
     </div>
 </div>
