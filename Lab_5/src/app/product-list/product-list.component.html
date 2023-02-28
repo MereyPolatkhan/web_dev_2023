@@ -1,7 +1,10 @@
 <div *ngIf="category">
     <h1> {{ category.title }} </h1>
-    <div *ngFor="let products of category.products">
-        <app-product-item></app-product-item>
+    <div *ngFor="let prod of category.products">
+        <app-product-item
+                [product]="prod"
+
+        ></app-product-item>
     </div>
 </div>
 
