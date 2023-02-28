@@ -15,7 +15,10 @@ export class ProductListComponent implements OnInit{
   constructor(private route: ActivatedRoute) {
   }
 
-  removeFromList(index: number){};
+  removeFromList(index: number){
+    // @ts-ignore
+    this.category.products = this.category.products.filter((x) => x.id !== index);
+  }
 
   addToList(prod: Product){};
 

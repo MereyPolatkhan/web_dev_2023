@@ -3,7 +3,11 @@
     <div *ngFor="let prod of category.products">
         <app-product-item
                 [productFromCategory]="prod"
+                (newItemEvent)="removeFromList($event)"
         ></app-product-item>
+        <br>
+        <h1>--------------------------------</h1>
+        <br>
     </div>
 </div>
 

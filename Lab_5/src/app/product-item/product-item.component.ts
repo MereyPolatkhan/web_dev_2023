@@ -7,6 +7,7 @@ import { Product } from "../products";
   styleUrls: ['./product-item.component.css']
 })
 export class ProductItemComponent {
+  likeCounter : number;
   @Input() productFromCategory : {
     description: string | undefined;
     id: number | undefined;
@@ -16,9 +17,10 @@ export class ProductItemComponent {
     price: number | undefined;
     rating: number | undefined
   };
-  @Output() newItemEvent = new EventEmitter<string>();
+  @Output() newItemEvent = new EventEmitter();
 
   constructor() {
+    this.likeCounter = 0;
     this.productFromCategory = new class implements Product {
       // @ts-ignore
       description: string | undefined;
@@ -35,6 +37,14 @@ export class ProductItemComponent {
       // @ts-ignore
       rating: number | undefined;
     }
+  }
+
+  toLike(){
+    this.likeCounter++;
+  }
+
+  removeItem() {
+    this.newItemEvent.emit(this.productFromCategory.id);
   }
 
   share() {

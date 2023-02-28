@@ -1,14 +1,29 @@
+<div class="prodName">
+    <h4>
+        <a [routerLink]="['/products', productFromCategory.id]">
+            {{productFromCategory.name}}
+        </a>
+    </h4>
+</div>
 
-<h4>
-    <a [routerLink]="['/products', productFromCategory.id]">
-       {{productFromCategory.name}}
-    </a>
-</h4>
+<div class="img_and_descr">
+    <img [src]="productFromCategory.image" alt="" width="100px"/>
+    <p *ngIf="productFromCategory.description">Description: {{ productFromCategory.description }}</p>
+</div>
 
-<img [src]="productFromCategory.image" alt="" width="100px"/>
-<p *ngIf="productFromCategory.description">Description: {{ productFromCategory.description }}</p>
+<div class="share_button">
+    <button type="button" (click)="share()">Share</button>
+</div>
 
-<button type="button" (click)="share()">Share</button>
+<div class="like_button">
+    <br>
+    <button (click)="toLike()">like </button>
+    <h4> likes: {{this.likeCounter}}</h4>
+</div>
+
+<div class="remove">
+    <button (click)="removeItem()"> remove </button>
+</div>
 
 
 <!--<app-product-alerts [product]="productFromCategory" ]>-->
