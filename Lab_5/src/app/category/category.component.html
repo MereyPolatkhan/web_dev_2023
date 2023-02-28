@@ -1,11 +1,11 @@
 <h1>Categories</h1>
 
-<div *ngFor="let cat of categoryProducts">
+<div *ngFor="let category of categoryProducts">
     <h4>
-        <a [title]="'click to view' + cat.title"
-           [routerLink]="['/categories', cat.id]"
+        <a [title]="'click to view' + category.title"
+           [routerLink]="['/categories', category.id]"
            >
-            {{ cat.title }}
+            {{ category.title }}
         </a>
     </h4>
 </div>

@@ -1,22 +1,47 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { products } from '../products';
+import {Product, products} from '../products';
+import {categories, Category} from "../categories";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
 })
-export class ProductListComponent {
-  products = [...products];
+export class ProductListComponent implements OnInit{
+  category: Category | undefined;
 
-  share(product: { link: string }) {
-    window.open('https://telegram.me/share/url?url=' + product.link);
+  constructor(private route: ActivatedRoute) {
   }
 
-  onNotify() {
-    window.alert('You will be notified when the product goes on sale');
+  removeFromList(index: number){};
+
+  addToList(prod: Product){};
+
+  ngOnInit() {
+    // First get the category id from the current route.
+    const routeParams = this.route.snapshot.paramMap;
+    const categoryIdFromRoute = Number(routeParams.get('categoryId'));
+
+    // Find the category that correspond with the id provided in route.
+    this.category = categories.find((category) => category.id === categoryIdFromRoute);
   }
+
+
+
+
+
+
+  // products = [...products];
+
+  // share(product: { link: string }) {
+  //   window.open('https://telegram.me/share/url?url=' + product.link);
+  // }
+  //
+  // onNotify() {
+  //   window.alert('You will be notified when the product goes on sale');
+  // }
 }
 
 /*
