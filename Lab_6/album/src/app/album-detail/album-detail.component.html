@@ -1,1 +1,10 @@
-<p>album-detail works!</p>
+<div *ngIf="album">
+  <div *ngIf="loaded">
+    <h2>Album Detail #{{album.id}}</h2>
+    <h4>title: {{album.title}} </h4>
+    <h4>user id: {{album.userId}}</h4>
+
+  </div>
+</div>
+
+<h1 *ngIf="!loaded"> loading...</h1>
