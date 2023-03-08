@@ -62,7 +62,12 @@ export class AlbumsComponent implements OnInit{
   //   });
   // }
 
+
+  // made to just it works
   delAlbum(albumId: number) {
     this.albums = this.albums.filter(x => x.id != albumId);
   }
+
+
+
 }

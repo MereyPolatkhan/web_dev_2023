@@ -31,6 +31,11 @@ export class AlbumService {
   deleteAlbum(id: number) : Observable<Album> {
     return this.client.delete<Album>(`${this.BASE_URL}/albums/${id}`);
   }
+  deleteAlbum2(id: number){
+    fetch('https://jsonplaceholder.typicode.com/posts/'+id, {method: 'DELETE'}).then();
+  }
+
+
 
   // update album
 
