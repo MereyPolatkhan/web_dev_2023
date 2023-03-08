@@ -12,9 +12,11 @@ import {AlbumService} from "../album.service";
 export class AlbumDetailComponent implements OnInit{
   album: Album;
   loaded: boolean;
+  tempAlbum: Album;
   constructor(private route: ActivatedRoute, private albumService: AlbumService) {
     this.album = {} as Album;
     this.loaded = true;
+    this.tempAlbum  = {} as Album;
   }
 
   ngOnInit(): void {
@@ -34,5 +36,16 @@ export class AlbumDetailComponent implements OnInit{
         }
       )
     });
+  }
+
+  updateAlbumTitle() {
+    this.tempAlbum.id = this.album.id;
+    this.tempAlbum.userId = this.album.id;
+    this.loaded = false;
+    this.albumService.updateAlbum(this.tempAlbum, this.album.id).subscribe((album)=>{
+      this.album = album;
+      this.loaded = true;
+    });
+    this.tempAlbum = {} as Album;
   }
 }

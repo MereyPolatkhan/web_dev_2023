@@ -1,1 +1,10 @@
-<p>album-photos works!</p>
+<h1>#{{id}} Photos</h1>
+
+<div *ngIf="loaded">
+  <ul *ngFor="let photo of photos">
+    <li>{{photo.id}}) {{photo.title}}</li>
+    <img [src]="photo.thumbnailUrl" alt="ahahaha">
+  </ul>
+</div>
+
+<h1 *ngIf="loaded==false">loading...</h1>
