@@ -12,7 +12,7 @@
     <h3><a routerLink="/albums/{{album.id}}">
       {{album.id}}) {{album.title}} [{{album.userId}}]
     </a></h3>
-    <button (click)="delAlbum()">delete</button>
+    <button (click)="delAlbum(album.id)">delete</button>
   </li>
 </ul>
 

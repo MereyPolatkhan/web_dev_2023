@@ -18,11 +18,11 @@ export class AlbumDetailComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    // const id = Number(this.route.snapshot.paramMap.get('id'));
     this.getAlbum();
   }
 
   getAlbum() {
+    // const id = Number(this.route.snapshot.paramMap.get('id'));
     this.route.paramMap.subscribe((params) => {
       const id = Number(params.get("id"));
       // this.album = ALBUMS.find((album) => album.id === id) as Album;
