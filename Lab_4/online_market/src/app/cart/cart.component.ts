@@ -9,6 +9,7 @@ import { CartService } from '../cart.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
+  // sum : number = 0;
   items = this.cartService.getItems();
 
   checkoutForm = this.formBuilder.group({name: '', address: ''});
@@ -17,11 +18,21 @@ export class CartComponent {
   constructor(
     private cartService: CartService,
     private formBuilder: FormBuilder
-  ) {}
+  ) {
+
+  }
 
   onSubmit(): void {
     this.items = this.cartService.clearCart();
     console.warn('Your order has been submitted', this.checkoutForm.value);
     this.checkoutForm.reset();
+  }
+
+  sum() {
+      let res = 0;
+      for (let item of this.items) {
+        res += item.price;
+      }
+      return res;
   }
 }

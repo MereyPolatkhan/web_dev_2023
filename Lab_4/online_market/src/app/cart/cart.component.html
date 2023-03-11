@@ -9,6 +9,10 @@
   <span>{{ item.price | currency }}</span>
 </div>
 
+<div>
+  <span>{{sum()}}</span>
+</div>
+
 <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="name">Name</label>
