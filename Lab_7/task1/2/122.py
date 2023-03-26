@@ -5,4 +5,14 @@ class Solution:
         res = 0
 
         for i in range(len(prices)):
-            pass 
+            if (mx > prices[i]): 
+                res += (mx - mn)
+                mn = mx = prices[i]
+                
+            else:
+                mn = min(mn, prices[i])
+                mx = max(mx, prices[i])
+        
+        res += (mx - mn)
+
+        return res

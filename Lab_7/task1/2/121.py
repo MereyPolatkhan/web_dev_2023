@@ -3,6 +3,7 @@ class Solution:
         buy_min = prices.copy()
         sell_max = prices.copy()
 
+
         for i in range(1, len(prices)): 
             buy_min[i] = min(buy_min[i], buy_min[i - 1])
 
