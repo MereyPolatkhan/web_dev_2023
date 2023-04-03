@@ -15,6 +15,8 @@ class Product(models.Model):
         return self.name + " " + str(self.price)
 
     def to_json(self):
+        if self is None:
+            return {}
         return {
             "id": self.pk,
             "name": self.name,
@@ -22,7 +24,7 @@ class Product(models.Model):
             "description": self.description,
             "count": self.count,
             "is_active": self.is_active,
-            "category_id": self.category.id,
+            "category": self.category.to_json(),
 
         }
 
@@ -34,7 +36,15 @@ class Category(models.Model):
         return self.name
 
     def to_json(self):
+        if self is None:
+            return {}
         return {
             "id": self.pk,
             "name": self.name,
         }
+
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+
+
