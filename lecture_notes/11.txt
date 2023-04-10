@@ -1,0 +1,27 @@
+lecture Django 3
+
+diff between django framw and django rest framw?
+
+why attribute error occurs ~queryset?
+
+filter vs get?
+
+what is queryset?
+
+should every class have to have eq, ... hash... methods in production
+
+
+if 2nd+ time p.save() -> update not insert
+
+
+
+
+dependencies 
+
+
+
+Meta class -> names ..... *google it* 
+
+Table relations (1to1 ...) 
+
+
