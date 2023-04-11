@@ -1,5 +1,5 @@
 from django.urls import path, include
-from hh_back.api import views
+from api import views
 
 urlpatterns = [
     path('companies/', views.get_companies),
