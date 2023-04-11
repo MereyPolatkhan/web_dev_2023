@@ -106,8 +106,8 @@ def get_vacancies(request):
 @csrf_exempt
 def get_vacancy(request, vacancy_id):
     try:
-        vacancy = Company.objects.get(id=vacancy_id)
-    except Company.DoesNotExist as e:
+        vacancy = Vacancy.objects.get(id=vacancy_id)
+    except Vacancy.DoesNotExist as e:
         return JsonResponse({'error': str(e)}, status=400)
 
     if request.method == 'GET':
@@ -124,7 +124,7 @@ def get_vacancy(request, vacancy_id):
         vacancy.name = vac_name
         vacancy.description = vac_description
         vacancy.salary = vac_salary
-        vacancy.company = vac_company_id
+        vacancy.company_id = vac_company_id
 
         vacancy.save()
 
