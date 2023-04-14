@@ -1,0 +1,7 @@
+1) p
+
+2) spped of the code in big systems
+
+3) 1 prod 2 users --> applications lvl, DB level
+
+4)  
