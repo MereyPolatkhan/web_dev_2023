@@ -6,4 +6,30 @@ import { Injectable } from '@angular/core';
 export class CompanyService {
 
   constructor() { }
+
+  getCompanies(){
+
+  }
+  postCompany() {
+
+  }
+
+
+  getCompany() {
+
+  }
+  putCompany() {
+
+  }
+  deleteCompany() {
+
+  }
+
+
+  getCompanyVacancies() {
+
+  }
+
+
+
 }
