@@ -9,5 +9,4 @@ class CompanyAdmin(admin.ModelAdmin):
 
 @admin.register(Vacancy)
 class VacancyAdmin(admin.ModelAdmin):
-    list_display = ("id", "name")
-
+    list_display = ("id", "name", "company")

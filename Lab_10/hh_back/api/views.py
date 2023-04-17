@@ -35,6 +35,8 @@ def get_companies(request):
 
 @csrf_exempt
 def get_company(request, company_id):
+    print(company_id)
+    print(request.method)
     try:
         company = Company.objects.get(id=company_id)
     except Company.DoesNotExist as e:
@@ -60,6 +62,8 @@ def get_company(request, company_id):
         return JsonResponse(company.to_json(), safe=False, status=200)
 
     if request.method == 'DELETE':
+        print("i am here")
+        print(company.name)
         company.delete()
         return JsonResponse({'deleted': True})
 
@@ -72,7 +76,7 @@ def get_company_vacancies(request, company_id):
         return JsonResponse({'error': str(e)}, status=400)
 
     vacs = [v.to_json() for v in vacs]
-    return JsonResponse(vacs, safe=False, status=200)
+    return JsonResponse(vacs, safe=False, status=200, json_dumps_params={"indent": 2})
 
 
 @csrf_exempt
