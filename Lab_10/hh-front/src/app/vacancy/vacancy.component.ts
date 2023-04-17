@@ -12,12 +12,6 @@ import {CompanyService} from "../company.service";
 export class VacancyComponent implements OnInit{
   title = 'vacancies'
 
-  newVacName: string = "";
-  newVacDescr: string = "";
-  newVacSalary: number = 0;
-  newVacCompany: Company | undefined;
-
-
   compVacancies: Vacancy[] = [];
   allVacancies: Vacancy[] = [];
 
@@ -40,7 +34,13 @@ export class VacancyComponent implements OnInit{
       )
     })
   }
-
+  getTopTenVacancies() {
+    this.vacancyService.getTopTenVacancies().subscribe(
+      (vacancies) => {
+        this.allVacancies = vacancies;
+      }
+    )
+  }
   getAllVacancies() {
     this.vacancyService.getVacancies().subscribe(
       (vacancies) => {
@@ -49,10 +49,13 @@ export class VacancyComponent implements OnInit{
     )
   }
 
-  addVacancy() {
-
+  deleteVacancy(id: number) {
+    this.vacancyService.deleteVacancy(id).subscribe((data)=>  {
+      this.allVacancies = this.allVacancies.filter((vacancy) => vacancy.id !== id);
+      this.compVacancies = this.compVacancies.filter((vacancy) => vacancy.id !== id);
+      }
+    )
   }
-
 
 
 

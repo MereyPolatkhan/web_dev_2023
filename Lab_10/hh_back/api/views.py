@@ -112,6 +112,7 @@ def get_vacancy(request, vacancy_id):
     try:
         vacancy = Vacancy.objects.get(id=vacancy_id)
     except Vacancy.DoesNotExist as e:
+        # print("HERE")
         return JsonResponse({'error': str(e)}, status=400)
 
     if request.method == 'GET':
@@ -134,7 +135,9 @@ def get_vacancy(request, vacancy_id):
 
         return JsonResponse(vacancy.to_json(), safe=False, status=200)
 
+    # print("----sss::", vacancy)
     if request.method == 'DELETE':
+        # print("-------::", vacancy)
         vacancy.delete()
         return JsonResponse({'deleted': True})
 

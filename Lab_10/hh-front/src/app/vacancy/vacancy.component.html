@@ -1,5 +1,6 @@
 <ol>
   <li *ngFor="let v of compVacancies">
     <p>{{v.name}} --- {{v.salary}}$, {{v.description}}, {{v.company.name}}</p>
+    <button class="delete" (click)="deleteVacancy(v.id)">Delete</button>
   </li>
 </ol>

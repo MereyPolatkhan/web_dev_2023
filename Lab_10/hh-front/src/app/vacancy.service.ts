@@ -46,7 +46,7 @@ export class VacancyService {
   }
   deleteVacancy(vac_id: number): Observable<any> {
     return this.client.delete(
-      `${this.BASE_URL}${vac_id}/`
+      `${this.BASE_URL}${vac_id}`
     )
   }
 

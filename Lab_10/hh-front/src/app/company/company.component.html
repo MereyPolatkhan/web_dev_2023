@@ -1,0 +1,51 @@
+<h3> Create company: </h3>
+
+<fieldset>
+  <label>Company name: </label>
+  <input type="text" [(ngModel)]="newCompanyName">
+  <br>
+  <label>Company description: </label>
+  <input type="text" [(ngModel)]="newCompanyDescr">
+  <br>
+  <label>Company city: </label>
+  <input type="text" [(ngModel)]="newCompanyCity">
+  <br>
+  <label>Company address: </label>
+  <input type="text" [(ngModel)]="newCompanyAddress">
+  <br>
+  <button (click)="addCompany()">Add company</button>
+</fieldset>
+
+<h3> Update company: write fields </h3>
+<fieldset>
+  <label>Update name: </label>
+  <input type="text" [(ngModel)]="updCompanyName">
+  <br>
+  <label>Update description: </label>
+  <input type="text" [(ngModel)]="updCompanyDescr">
+  <br>
+  <label>Update city: </label>
+  <input type="text" [(ngModel)]="updCompanyCity">
+  <br>
+  <label>Update address: </label>
+  <input type="text" [(ngModel)]="updCompanyAddress">
+  <br>
+</fieldset>
+<h2>Companies: </h2>
+<ul>
+  <li *ngFor="let c of companies">
+    <div class="company">
+
+      <a routerLink="/companies/{{c.id}}/"> {{c.name}}: </a>
+
+      <button class="delete" (click)="deleteCompany(c.id)">Delete</button>
+      <button class="update" (click)="updateCompany(c.id)">Update: </button>
+
+      <h4> city: {{c.city}},
+        address: {{c.address}},
+        description: {{c.description}}
+      </h4>
+
+    </div>
+  </li>
+</ul>
