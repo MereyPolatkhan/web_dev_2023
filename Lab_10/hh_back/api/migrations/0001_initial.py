@@ -33,7 +33,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=255)),
                 ('descr', models.TextField()),
                 ('salary', models.FloatField()),
-                ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='api.company')),
+                ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='views.company')),
             ],
             options={
                 'verbose_name': 'Vacancy',
