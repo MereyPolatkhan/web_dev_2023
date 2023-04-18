@@ -88,7 +88,6 @@ class VacanciesAPIView(APIView):
 class VacancyAPIView(APIView):
     def get_object(self, pk):
         try:
-            print("HEERER")
             return Vacancy.objects.get(id=pk)
         except Vacancy.DoesNotExist:
             raise Http404
